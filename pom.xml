@@ -9,8 +9,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>cloudc</module>
-        <module>cloudc-1</module>
         <module>cloudr</module>
+        <module>cloudc2</module>
+        <module>cloudtwo</module>
     </modules>
     <!-- 指定maven仓库 -->
     <repositories><!-- 发现依赖和扩展的远程资源库 -->
@@ -70,12 +71,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--jpa的jar包 ，操作数据库的，类似hibernate-->
+        <!--jpa的jar包 ，操作数据库的，类似hibernate
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
+-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -108,13 +109,13 @@
             <version>1.9.11</version>
         </dependency>
 
-        <!-- mysql数据库驱动 -->
+        <!-- mysql数据库驱动
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.21</version>
         </dependency>
-
+-->
 
     </dependencies>
 

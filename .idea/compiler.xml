@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloudc" />
-        <module name="cloudc1" />
+        <module name="cloudc2" />
         <module name="cloudr" />
+        <module name="cloudtwo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,7 +21,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cloudc" options="-parameters" />
       <module name="cloudc1" options="-parameters" />
+      <module name="cloudc2" options="-parameters" />
       <module name="cloudr" options="-parameters" />
+      <module name="cloudtwo" options="-parameters" />
     </option>
   </component>
 </project>
