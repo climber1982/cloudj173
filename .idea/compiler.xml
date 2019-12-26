@@ -9,6 +9,7 @@
         <module name="cloudc" />
         <module name="cloudr" />
         <module name="cloudtwo" />
+        <module name="config" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
       <module name="cloudc2" options="-parameters" />
       <module name="cloudr" options="-parameters" />
       <module name="cloudtwo" options="-parameters" />
+      <module name="config" options="-parameters" />
     </option>
   </component>
 </project>
