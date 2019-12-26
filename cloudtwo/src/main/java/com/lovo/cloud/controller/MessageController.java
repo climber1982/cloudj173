@@ -1,6 +1,7 @@
 package com.lovo.cloud.controller;
 
 import com.lovo.cloud.entity.UserEntity;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,13 +26,19 @@ public class MessageController {
 
     //根据标记获得用户对象1-赵云，2-马超
     @RequestMapping("userInfo/{tag}")
+    @HystrixCommand(fallbackMethod = "getUserByTag2")
     public UserEntity getUserByTag(@PathVariable("tag")int tag){
-
+              int i=1/0;
         ResponseEntity responseEntity=     restTemplate.getForEntity("http://cloudc/userInfo/"+tag,UserEntity.class);
 
         return (UserEntity) responseEntity.getBody();
     }
+    public UserEntity getUserByTag2(@PathVariable("tag")int tag){
 
+        ResponseEntity responseEntity=     restTemplate.getForEntity("http://cloudc/userInfo/"+(tag+1),UserEntity.class);
+
+        return (UserEntity) responseEntity.getBody();
+    }
     @RequestMapping("getUser")
     public UserEntity getUser(){
          UserEntity user=new UserEntity();
