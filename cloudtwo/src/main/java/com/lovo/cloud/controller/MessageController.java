@@ -27,17 +27,17 @@ public class MessageController {
     //根据标记获得用户对象1-赵云，2-马超
     @RequestMapping("userInfo/{tag}")
     @HystrixCommand(fallbackMethod = "getUserByTag2")
-    public UserEntity getUserByTag(@PathVariable("tag")int tag){
+    public String getUserByTag(@PathVariable("tag")int tag){
               int i=1/0;
-        ResponseEntity responseEntity=     restTemplate.getForEntity("http://cloudc/userInfo/"+tag,UserEntity.class);
+        ResponseEntity responseEntity=     restTemplate.getForEntity("http://cloudc/userInfo/"+tag,String.class);
 
-        return (UserEntity) responseEntity.getBody();
+        return  responseEntity.getBody().toString();
     }
-    public UserEntity getUserByTag2(@PathVariable("tag")int tag){
+    public String getUserByTag2(@PathVariable("tag")int tag){
 
-        ResponseEntity responseEntity=     restTemplate.getForEntity("http://cloudc/userInfo/"+(tag+1),UserEntity.class);
+        ResponseEntity responseEntity=     restTemplate.getForEntity("http://cloudc/userInfo/"+tag,String.class);
 
-        return (UserEntity) responseEntity.getBody();
+        return  responseEntity.getBody().toString();
     }
     @RequestMapping("getUser")
     public UserEntity getUser(){

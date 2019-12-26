@@ -10,7 +10,6 @@
     <modules>
         <module>cloudc</module>
         <module>cloudr</module>
-        <module>cloudc2</module>
         <module>cloudtwo</module>
     </modules>
     <!-- 指定maven仓库 -->

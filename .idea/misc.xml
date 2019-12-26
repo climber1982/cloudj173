@@ -10,6 +10,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/cloudc-1/pom.xml" />
+        <option value="$PROJECT_DIR$/cloudc2/pom.xml" />
       </set>
     </option>
   </component>

@@ -7,13 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloudc" />
-        <module name="cloudc2" />
         <module name="cloudr" />
         <module name="cloudtwo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cloudc1" target="1.8" />
+      <module name="cloudc2" target="1.8" />
       <module name="clouds" target="1.5" />
     </bytecodeTargetLevel>
   </component>

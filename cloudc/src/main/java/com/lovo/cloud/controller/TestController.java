@@ -1,5 +1,7 @@
 package com.lovo.cloud.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lovo.cloud.entity.UserEntity;
 import org.apache.catalina.User;
 import org.springframework.web.bind.annotation.*;
@@ -12,15 +14,20 @@ public class TestController {
     }
   //根据标记获得用户对象1-赵云，2-马超
     @RequestMapping("userInfo/{tag}")
-    public UserEntity getUserByTag(@PathVariable("tag")int tag){
+    public String  getUserByTag(@PathVariable("tag")int tag) throws JsonProcessingException {
         UserEntity user=new UserEntity();
         if(tag==1){
             user.setUserName("赵云");
+            user.setPassword("1234");
         }
         if(tag==2){
             user.setUserName("马超");
+            user.setPassword("2345");
         }
-        return user;
+        ObjectMapper mapper=new ObjectMapper();
+       String jsonStr= mapper.writeValueAsString(user);
+
+        return jsonStr;
     }
     @RequestMapping("getUserByName")
     public UserEntity getUserByName(@RequestBody String userName){
