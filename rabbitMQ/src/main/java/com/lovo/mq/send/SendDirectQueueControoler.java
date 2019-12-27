@@ -1,5 +1,6 @@
 package com.lovo.mq.send;
 
+import com.lovo.mq.entity.UserEntity;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,14 @@ public class SendDirectQueueControoler{
     private RabbitTemplate rabbitTemplate;
 
     @RequestMapping("send")
-     public  String send(String message){
+     public  String send(UserEntity user){
         //向队列中发送消息
-        rabbitTemplate.convertAndSend("myFirstDirect","j173",message);
-         return "发送的消息为："+message;
+        rabbitTemplate.convertAndSend("myFirstDirect","j173",user);
+         return "发送的消息为："+user;
+     }
+     @RequestMapping("topic")
+     public  String topic(){
+       rabbitTemplate.convertAndSend("myfanoutExchange","","mytopic");
+        return "ok";
      }
 }
