@@ -25,4 +25,9 @@ public class SendDirectQueueControoler{
        rabbitTemplate.convertAndSend("myfanoutExchange","","mytopic");
         return "ok";
      }
+     @RequestMapping("savaUserVue")
+     public  String savaUser(String userName){
+         rabbitTemplate.convertAndSend("myFirstDirect","j173",userName);
+        return "ok";
+     }
 }
