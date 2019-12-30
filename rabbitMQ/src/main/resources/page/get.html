@@ -21,7 +21,8 @@
             savaUser:function(){
                 axios
                     .get('/getUserName')
-                    .then(response => (this.info=response.data))
+                    .then(response => (
+                        this.info=response.data))
             .catch(function (error) { // 请求失败处理
                     console.log(error);
                 });
