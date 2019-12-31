@@ -23,9 +23,9 @@ public class GetMessage {
         System.out.println("我是第二个队列"+str);
     }
 
-   @RabbitListener(queues = "myqueuej173")
-    public  void getMessage(String userName) throws InterruptedException {
-         //接受后放入队列
-       queue.put(userName);
-    }
+//   @RabbitListener(queues = "myqueuej173")
+//    public  void getMessage(String userName) throws InterruptedException {
+//         //接受后放入队列
+//       queue.put(userName);
+//    }
 }

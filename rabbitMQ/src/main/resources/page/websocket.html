@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
+      <div id="mid">
+
+      </div>
 <script>
     var socket;
     if(typeof(WebSocket) == "undefined") {
@@ -22,7 +25,7 @@
         //获得消息事件
         socket.onmessage = function(msg) {
             alert(msg.data);
-
+            document.getElementById("mid").innerHTML=msg.data;
             //发现消息进入    开始处理前端触发逻辑
         };
         //关闭事件

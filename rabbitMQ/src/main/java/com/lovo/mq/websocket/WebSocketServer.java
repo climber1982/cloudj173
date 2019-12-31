@@ -1,11 +1,14 @@
 package com.lovo.mq.websocket;
 
 
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @ServerEndpoint("/websocket")
 @Component
@@ -13,11 +16,14 @@ public class WebSocketServer {
 
     //与某个客户端的连接会话，需要通过它来给客户端发送数据
     private Session session;
+
     /**
      * 连接建立成功调用的方法*/
     @OnOpen
     public void onOpen(Session session) throws IOException {
         this.session = session;
+
+        SessionList.list.add(session);
      session.getBasicRemote().sendText("你与后台已经建立链接。。。");
     }
     @OnClose
@@ -34,10 +40,10 @@ public class WebSocketServer {
     public void onMessage(String message, Session session) throws IOException, InterruptedException {
 
        System.out.println("收到前端内容："+message);
-       for (int i=0;i<10;i++) {
-           this.sendMessage("我是后台"+i);
-           Thread.sleep(1000*3);
-       }
+//       for (int i=0;i<10;i++) {
+//           this.sendMessage("我是后台"+i);
+//           Thread.sleep(1000*3);
+//       }
     }
 
     /**
@@ -57,5 +63,12 @@ public class WebSocketServer {
         this.session.getBasicRemote().sendText(message);
     }
 
-
+    @RabbitListener(queues = "myqueuej173")
+    public  void getOrder(String userName) throws InterruptedException, IOException {
+          if(null!= SessionList.list&& SessionList.list.size()>0) {
+              for (Session session :  SessionList.list) {
+                  session.getBasicRemote().sendText(userName);
+              }
+          }
+    }
 }

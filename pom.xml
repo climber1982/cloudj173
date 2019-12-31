@@ -14,6 +14,7 @@
         <module>config</module>
         <module>queue</module>
         <module>rabbitMQ</module>
+        <module>layui</module>
     </modules>
     <!-- 指定maven仓库 -->
     <repositories><!-- 发现依赖和扩展的远程资源库 -->

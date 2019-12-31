@@ -10,6 +10,7 @@
         <module name="cloudr" />
         <module name="cloudtwo" />
         <module name="config" />
+        <module name="layui" />
         <module name="queue" />
         <module name="rabbitMQ" />
       </profile>
@@ -28,6 +29,7 @@
       <module name="cloudr" options="-parameters" />
       <module name="cloudtwo" options="-parameters" />
       <module name="config" options="-parameters" />
+      <module name="layui" options="-parameters" />
       <module name="queue" options="-parameters" />
       <module name="rabbitMQ" options="-parameters" />
     </option>

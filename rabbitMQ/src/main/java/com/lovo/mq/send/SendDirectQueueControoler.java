@@ -30,4 +30,10 @@ public class SendDirectQueueControoler{
          rabbitTemplate.convertAndSend("myFirstDirect","j173",userName);
         return "ok";
      }
+
+     @RequestMapping("savaOrder")
+    public String savaOrder(String userName){
+         rabbitTemplate.convertAndSend("myFirstDirect","j173",userName);
+        return "ok";
+    }
 }
