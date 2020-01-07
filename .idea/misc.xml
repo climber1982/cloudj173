@@ -11,6 +11,9 @@
       <set>
         <option value="$PROJECT_DIR$/cloudc-1/pom.xml" />
         <option value="$PROJECT_DIR$/cloudc2/pom.xml" />
+        <option value="$PROJECT_DIR$/layui/pom.xml" />
+        <option value="$PROJECT_DIR$/layui/vue/pom.xml" />
+        <option value="$PROJECT_DIR$/vue/pom.xml" />
       </set>
     </option>
   </component>

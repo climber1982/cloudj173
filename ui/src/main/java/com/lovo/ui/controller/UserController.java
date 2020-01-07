@@ -31,12 +31,12 @@ public class UserController {
            userDao.save(user);
            return "修改成功";
      }
-
-     @RequestMapping("userInfo/{id}")
-     public String userInfo(@PathVariable("id")String id) throws JsonProcessingException {
+    @RequestMapping("userInfo/{id}")
+    public String userInfo(@PathVariable("id")String id) throws JsonProcessingException {
         UserEntity user= userDao.findById(id).get();
-         ObjectMapper mapper=new ObjectMapper();
-         String result=mapper.writeValueAsString(user);
-         return result;
-     }
+        ObjectMapper mapper=new ObjectMapper();
+        String result=mapper.writeValueAsString(user);
+        return result;
+    }
 }
+

@@ -90,7 +90,6 @@
 						//发送 post 请求
 						this.$http.post('/updateUser',
 								{
-
 									userName:this.userName,
 									userAge:this.userAge,
 									dateTime:this.dateTime,
@@ -101,13 +100,14 @@
 							var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
 							parent.layer.close(index); //再执行关闭
 							window.parent.location.reload();
-							alert("添加成功");
+							alert("修改成功");
 
 
 						},function(res){
 							console.log(res.status);
 						});
 					}
+
 				}
 			});
 

@@ -10,15 +10,17 @@
         <module name="cloudr" />
         <module name="cloudtwo" />
         <module name="config" />
-        <module name="layui" />
         <module name="queue" />
         <module name="rabbitMQ" />
+        <module name="ui" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cloudc1" target="1.8" />
       <module name="cloudc2" target="1.8" />
       <module name="clouds" target="1.5" />
+      <module name="layui" target="1.8" />
+      <module name="vue" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -32,6 +34,8 @@
       <module name="layui" options="-parameters" />
       <module name="queue" options="-parameters" />
       <module name="rabbitMQ" options="-parameters" />
+      <module name="ui" options="-parameters" />
+      <module name="vue" options="-parameters" />
     </option>
   </component>
 </project>
