@@ -9,9 +9,9 @@
         <module name="cloudc" />
         <module name="cloudr" />
         <module name="cloudtwo" />
-        <module name="config" />
         <module name="queue" />
         <module name="rabbitMQ" />
+        <module name="config" />
         <module name="ui" />
       </profile>
     </annotationProcessing>

@@ -63,7 +63,7 @@ public class WebSocketServer {
         this.session.getBasicRemote().sendText(message);
     }
 
-    @RabbitListener(queues = "myqueuej173")
+    //@RabbitListener(queues = "myqueuej173")
     public  void getOrder(String userName) throws InterruptedException, IOException {
           if(null!= SessionList.list&& SessionList.list.size()>0) {
               for (Session session :  SessionList.list) {
