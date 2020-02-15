@@ -20,6 +20,7 @@
       <module name="cloudc2" target="1.8" />
       <module name="clouds" target="1.5" />
       <module name="layui" target="1.8" />
+      <module name="sprinbboot" target="1.8" />
       <module name="vue" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -34,6 +35,7 @@
       <module name="layui" options="-parameters" />
       <module name="queue" options="-parameters" />
       <module name="rabbitMQ" options="-parameters" />
+      <module name="sprinbboot" options="-parameters" />
       <module name="ui" options="-parameters" />
       <module name="vue" options="-parameters" />
     </option>

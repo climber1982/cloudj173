@@ -2,6 +2,9 @@ package com.lovo.mq.entity;
 
 import java.io.Serializable;
 
+/**
+ *
+ */
 public class UserEntity implements Serializable {
 
     private String userName;

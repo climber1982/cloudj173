@@ -16,5 +16,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/vue/");
         registry.addResourceHandler("/modules/**")
                 .addResourceLocations("classpath:/modules/");
+        registry.addResourceHandler("/vueHtml/**")
+                .addResourceLocations("classpath:/vueHtml/");
     }
 }
