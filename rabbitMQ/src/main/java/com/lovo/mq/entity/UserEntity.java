@@ -3,7 +3,7 @@ package com.lovo.mq.entity;
 import java.io.Serializable;
 
 /**
- *
+ *用户实体
  */
 public class UserEntity implements Serializable {
 
