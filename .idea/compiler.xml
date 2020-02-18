@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloudc" />
+        <module name="coresweb" />
         <module name="cloudr" />
         <module name="cloudtwo" />
         <module name="queue" />
@@ -32,6 +33,7 @@
       <module name="cloudr" options="-parameters" />
       <module name="cloudtwo" options="-parameters" />
       <module name="config" options="-parameters" />
+      <module name="coresweb" options="-parameters" />
       <module name="layui" options="-parameters" />
       <module name="queue" options="-parameters" />
       <module name="rabbitMQ" options="-parameters" />
