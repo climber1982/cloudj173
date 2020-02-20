@@ -53,6 +53,7 @@
     </parent>
     <!-- spring-boot的web启动的jar包 -->
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
