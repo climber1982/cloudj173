@@ -2,6 +2,7 @@ package com.lovo.Jedis;
 
 import com.lovo.UserEntity;
 import com.lovo.jedis.JedisUtil;
+import com.lovo.jedis.PersonRun;
 import com.lovo.jedis.SerializeUtil;
 import org.junit.After;
 import org.junit.Before;
@@ -87,6 +88,47 @@ public class TJedis {
       for (String s:set){
           System.out.println(s);
       }
+    }
+
+    @Test
+    public  void zadd(){
+        Map<String,Double> map=new HashMap<>();
+        map.put("赵云",10d);
+        map.put("马超",20d);
+        map.put("林冲",5d);
+        map.put("鲁智深",40d);
+        jedisUtil.zadd("run",map);
+
+    }
+
+    @Test
+    public void printRun(){
+        //开始运动
+        PersonRun zy=new PersonRun("赵云",1000);
+        PersonRun mc=new PersonRun("马超",2000);
+        PersonRun lc=new PersonRun("林冲",1000);
+        PersonRun lzs=new PersonRun("鲁智深",3000);
+        zy.start();
+        mc.start();
+        lc.start();
+        lzs.start();
+        int i=1;
+        while (true){
+            //从高到底输出跑步排行
+            Set<String> set=   jedisUtil.zrevrange("run");
+            System.out.println("第"+i+"排行榜");
+            for (String str:set){
+                System.out.println(str);
+            }
+            i++;
+            try {
+                Thread.sleep(1000*6);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+        }
+
     }
 
 }

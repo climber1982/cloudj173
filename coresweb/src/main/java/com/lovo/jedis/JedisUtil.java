@@ -191,4 +191,52 @@ public class JedisUtil {
         return  set;
     }
 
+    /**
+     * 添加有序集合
+     * @param key
+     * @param map
+     */
+    public  void zadd(String key,Map<String,Double> map){
+        Jedis jedis=createJedis();
+        jedis.zadd(key,map);
+        jedis.close();
+    }
+
+    /**
+     * 给元素增量
+     * @param key
+     * @param score
+     * @param member
+     * @return 增量后的数
+     */
+   public double zincrby(String key,double score,String member){
+       Jedis jedis=createJedis();
+       Double d=  jedis.zincrby(key,score,member);
+      return d;
+   }
+
+    /**
+     * 返回升序排列的集合
+     * @param key
+     * @return
+     */
+   public Set<String> zrange(String key){
+       Jedis jedis=createJedis();
+       Set<String> set= jedis.zrange(key,0,-1);
+       jedis.close();;
+       return  set;
+   }
+
+    /**
+     * 输出降序排列的集合
+     * @param key
+     * @return
+     */
+   public Set<String> zrevrange(String key){
+       Jedis jedis=createJedis();
+     Set<String> set=  jedis.zrevrange(key,0,-1);
+     jedis.close();
+     return set;
+   }
+
 }
