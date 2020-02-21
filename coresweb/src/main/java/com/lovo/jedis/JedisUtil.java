@@ -3,6 +3,7 @@ package com.lovo.jedis;
 import redis.clients.jedis.Jedis;
 
 import java.util.Map;
+import java.util.Set;
 
 /**
  * jedis工具类
@@ -43,7 +44,9 @@ public class JedisUtil {
      * @param val
      */
     public  void setString(String key,String val){
-           createJedis().set(key,val);
+
+          createJedis().set(key,val);
+
     }
 
     /**
@@ -154,7 +157,38 @@ public class JedisUtil {
         return "";
     }
 
+    /**
+     * 添加集合
+     * @param key
+     * @param strings
+     */
+    public void sadd(String key,String... strings){
+       Jedis jedis=createJedis();
+       jedis.sadd(key,strings);
+       jedis.close();
+    }
 
-
+    /**
+     * 获取差集
+     * @param strings
+     * @return
+     */
+    public Set<String> sdiff(String ...strings){
+        Jedis jedis=createJedis();
+        Set<String>  set=   jedis.sdiff(strings);
+        jedis.close();
+        return  set;
+    }
+    /**
+     * 获取交集
+     * @param strings
+     * @return
+     */
+    public Set<String> sinter(String ...strings){
+        Jedis jedis=createJedis();
+        Set<String>  set=   jedis.sinter(strings);
+        jedis.close();
+        return  set;
+    }
 
 }

@@ -10,6 +10,7 @@ import redis.clients.jedis.Jedis;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class TJedis {
     JedisUtil jedisUtil=null;
@@ -73,6 +74,19 @@ public class TJedis {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Test
+    public  void sadd(){
+        jedisUtil.sadd("a_array","a","b","d","1","100");
+        jedisUtil.sadd("b_array","f","b","","1","1000");
+    }
+@Test
+    public  void sdiff(){
+      Set<String> set=  jedisUtil.sdiff("a_array","b_array");
+      for (String s:set){
+          System.out.println(s);
+      }
     }
 
 }
