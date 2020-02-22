@@ -239,4 +239,15 @@ public class JedisUtil {
      return set;
    }
 
+    /**
+     * 向通道推送消息
+     * @param channel
+     * @param message
+     */
+   public void publish(String channel ,String message){
+       Jedis jedis=createJedis();
+       jedis.publish(channel,message);
+       jedis.close();
+   }
+
 }

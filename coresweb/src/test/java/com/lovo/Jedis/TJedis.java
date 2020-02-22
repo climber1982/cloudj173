@@ -131,4 +131,8 @@ public class TJedis {
 
     }
 
+    @Test
+    public void publist(){
+        jedisUtil.publish("message1","hello pub");
+    }
 }
