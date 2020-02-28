@@ -4,7 +4,7 @@
     <groupId>lovo</groupId>
     <artifactId>springcloudj173</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>springcloudj173</name>
+    <name>clouidj173</name>
     <!-- <packaging>jar</packaging> -->
     <packaging>pom</packaging>
     <modules>
@@ -16,6 +16,8 @@
         <module>rabbitMQ</module>
         <module>ui</module>
         <module>coresweb</module>
+        <module>springmybaits</module>
+        <module>springshiro</module>
     </modules>
     <!-- 指定maven仓库 -->
     <repositories><!-- 发现依赖和扩展的远程资源库 -->
@@ -95,13 +97,13 @@
             <version>3.13</version>
         </dependency>
 
-        <!--thymeleaf模板jar，是很不错的html数据传递取值，类似jsp的jstl
+        <!--thymeleaf模板jar，是很不错的html数据传递取值，类似jsp的jstl-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
 
         </dependency>
--->
+
         <!-- fastJson json数组有关的 -->
         <dependency>
             <groupId>com.alibaba</groupId>

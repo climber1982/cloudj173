@@ -1,17 +1,23 @@
 package com.lovo.Jedis;
 
+import com.alibaba.fastjson.JSONArray;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.lovo.UserEntity;
 import com.lovo.jedis.JedisUtil;
+import com.lovo.jedis.ListBean;
 import com.lovo.jedis.PersonRun;
 import com.lovo.jedis.SerializeUtil;
+import jdk.internal.org.objectweb.asm.TypeReference;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.io.IOException;
+import java.util.*;
+
+import static com.fasterxml.jackson.databind.SerializationFeature.INDENT_OUTPUT;
 
 public class TJedis {
     JedisUtil jedisUtil=null;
@@ -23,23 +29,43 @@ public class TJedis {
     }
 
   @Test
-    public  void testByte(){
+    public  void testByte() throws IOException {
       //创建对象
       UserEntity userEntity=new UserEntity();
       userEntity.setUserName("赵云");
       userEntity.setAge(28);
-      //把对象序列化
-     byte[] userByte= SerializeUtil.serialize(userEntity);
-     //把序列化后的数据放入到redis
-      jedisUtil.setByte("user".getBytes(),userByte);
+      UserEntity userEntity2=new UserEntity();
+      userEntity2.setUserName("赵云");
+      userEntity2.setAge(28);
+      List<UserEntity> list=new ArrayList<>();
+      list.add(userEntity);
+      list.add(userEntity2);
+//      //把对象序列化
+//     byte[] userByte= SerializeUtil.serialize(list);
+//     //把序列化后的数据放入到redis
+//      jedisUtil.setByte("user".getBytes(),userByte);
 
+     String str= JSONArray.toJSONString(list);
+      System.out.println(str);
+     // jedisUtil.createJedis().set("josnxx","aa");
+      jedisUtil.setString("json",str);
+     String json= jedisUtil.getString("json");
+  // List<UserEntity> list1= (List<UserEntity>) mapper.readValue(json,List.class);
+      List<UserEntity> list1=   JSONArray.parseArray(json,UserEntity.class);
+      System.out.println(list1.size());
+      for (UserEntity userEntity1:list1){
+          System.out.println(userEntity.getUserName());
+      }
     }
 
     @Test
     public  void getUser(){
-     UserEntity userEntity= (UserEntity) SerializeUtil.unserizlize
+        List<UserEntity> list= (List<UserEntity>) SerializeUtil.unserizlize
              (jedisUtil.getByte("user".getBytes()));
-        System.out.println(userEntity.getUserName()+"/"+userEntity.getAge());
+       // System.out.println(userEntity.getUserName()+"/"+userEntity.getAge());
+     for (UserEntity userEntity:list){
+         System.out.println(userEntity.getUserName());
+     }
     }
 
     @Test

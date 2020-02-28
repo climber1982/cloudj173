@@ -9,11 +9,13 @@
         <module name="cloudc" />
         <module name="coresweb" />
         <module name="cloudr" />
+        <module name="springmybaits" />
         <module name="cloudtwo" />
         <module name="queue" />
+        <module name="ui" />
         <module name="rabbitMQ" />
         <module name="config" />
-        <module name="ui" />
+        <module name="springshiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -38,6 +40,8 @@
       <module name="queue" options="-parameters" />
       <module name="rabbitMQ" options="-parameters" />
       <module name="sprinbboot" options="-parameters" />
+      <module name="springmybaits" options="-parameters" />
+      <module name="springshiro" options="-parameters" />
       <module name="ui" options="-parameters" />
       <module name="vue" options="-parameters" />
     </option>

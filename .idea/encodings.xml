@@ -9,7 +9,12 @@
     <file url="file://$PROJECT_DIR$/coresweb" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/queue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rabbitMQ" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmybaits" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springshiro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/test/src/com/lovo/webservice/socket/Constants.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/test/src/com/lovo/webservice/socket/NioClient.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/test/src/com/lovo/webservice/socket/NioServer.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/ui" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
