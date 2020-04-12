@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@ServerEndpoint("/websocket")
-@Component
+//@ServerEndpoint("/websocket")
+//@Component
 public class WebSocketServer {
 
     //与某个客户端的连接会话，需要通过它来给客户端发送数据
@@ -56,19 +56,19 @@ public class WebSocketServer {
 
         error.printStackTrace();
     }
-    /**
-     * 实现服务器主动推送
-     */
-    public void sendMessage(String message) throws IOException {
-        this.session.getBasicRemote().sendText(message);
-    }
+//    /**
+//     * 实现服务器主动推送
+//     */
+//    public void sendMessage(String message) throws IOException {
+//        this.session.getBasicRemote().sendText(message);
+//    }
 
-    @RabbitListener(queues = "myqueuej173")
-    public  void getOrder(String userName) throws InterruptedException, IOException {
-          if(null!= SessionList.list&& SessionList.list.size()>0) {
-              for (Session session :  SessionList.list) {
-                  session.getBasicRemote().sendText(userName);
-              }
-          }
-    }
+//    @RabbitListener(queues = "myqueuej173")
+//    public  void getOrder(String userName) throws InterruptedException, IOException {
+//          if(null!= SessionList.list&& SessionList.list.size()>0) {
+//              for (Session session :  SessionList.list) {
+//                  session.getBasicRemote().sendText(userName);
+//              }
+//          }
+//    }
 }

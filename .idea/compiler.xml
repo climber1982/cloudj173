@@ -12,6 +12,7 @@
         <module name="config" />
         <module name="queue" />
         <module name="rabbitMQ" />
+        <module name="rabbitMQClient" />
         <module name="ui" />
       </profile>
     </annotationProcessing>
@@ -34,6 +35,7 @@
       <module name="layui" options="-parameters" />
       <module name="queue" options="-parameters" />
       <module name="rabbitMQ" options="-parameters" />
+      <module name="rabbitMQClient" options="-parameters" />
       <module name="ui" options="-parameters" />
       <module name="vue" options="-parameters" />
     </option>

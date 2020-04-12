@@ -6,11 +6,9 @@
     <file url="file://$PROJECT_DIR$/cloudr" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudtwo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/layui" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/layui/vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/queue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rabbitMQ" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rabbitMQClient" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ui" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/vue" charset="UTF-8" />
   </component>
 </project>
