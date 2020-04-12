@@ -1,13 +1,11 @@
-package com.lovo.mq.entity;
+package com.lovo;
 
 import java.io.Serializable;
 
-/**
- *用户实体
- */
 public class UserEntity implements Serializable {
 
-    private String userName;
+    private  String userName;
+    private  int age;
 
     public String getUserName() {
         return userName;
@@ -15,5 +13,13 @@ public class UserEntity implements Serializable {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

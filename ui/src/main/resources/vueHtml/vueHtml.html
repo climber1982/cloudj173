@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueHtml</title>
+</head>
+<body>
+ <div id="vid">
+     <input type="button" value="AJAX" @click="ajaxTest"/>
+ </div>
+
+<!--vue-->
+<script src="../vue/Vue.js"></script>
+<!--使用ajax 需要导入-->
+<script  src="../vue/vue-resource.js"></script>
+
+  <script>
+      new Vue({
+          el:"#vid",
+          methods:{
+              ajaxTest:function () {
+                  this.$http.post('http://127.0.0.1:8001/testCores',
+                      {
+                      },
+                      {emulateJSON:true}).then(function(res){
+                      alert(res);
+
+                  },function(res){
+
+                  });
+              }
+          }
+      });
+  </script>
+</body>
+</html>
