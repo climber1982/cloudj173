@@ -40,7 +40,7 @@ public class GetMessage {
    @RabbitListener(queues = "myqueuej173")
     public  void getMessage(Channel channel,UserEntity userEntity,@Header(AmqpHeaders.DELIVERY_TAG) long tag) throws InterruptedException, IOException {
 
-     // channel.basicNack(tag,false,true);
+     channel.basicNack(tag,false,true);
 
    System.out.println("我是第三个队列："+userEntity.getUserName());
 
